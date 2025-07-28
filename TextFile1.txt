@@ -1,0 +1,256 @@
+﻿	جمع وطرح وضرب وقسمة وباقي قسمة رقمين
+	short int number1, number2;
+	cout << "enter number1 : ";
+	cin >> number1;
+	cout << "enter number2 : ";
+	cin >> number2;
+
+	cout << "number1 + number2 = " << number1 + number2 << endl;
+	cout << "number1 - number2 = " << number1 - number2 << endl;
+	cout << "number1 * number2 = " << number1 * number2 << endl;
+	cout << "number1 / number2 = " << number1 / number2 << endl;
+	cout << "number1 % number2 = " << number1 % number2 << endl;
+
+------------------------------------------------------------
+	نصف الرقم
+	short int number;
+	cout << "enter the number :";
+	cin >> number;
+	cout << "Half of the number is : " << number / 2 << endl;
+------------------------------------------------------------
+	مجموع الارقام
+	short int number1, number2, number3, total;
+	cout << "enter number1 : ";
+	cin >> number1;
+	cout << "enter number2 : ";
+	cin >> number2;
+	cout << "enter number3 : ";
+	cin >> number3;
+	cout << "total= " << number1 + number2 + number3 << endl;
+	---------------------------------------------------------
+		متوسط الدرجات
+		float mark1, mark2, mark3,average;
+	cout << "enter mark1 :";
+	cin >> mark1;
+	cout << "enter mark2 :";
+	cin >> mark2;
+	cout << "enter mark3 :";
+	cin >> mark3;
+	average = (mark1 + mark2 + mark3) / 3;
+	cout << "Average : " << average << endl;
+	---------------------------------------------------------
+		عكس الارقام
+		short int number1, number2;
+	cout << "enter number1 :";
+	cin >> number1;
+	cout << "enter number2 :";
+	cin >> number2;
+	cout << "number1 : " << number1 << endl;
+	cout << "number2 : " << number2 << endl;
+
+	cout <<"number1 : "<< number2 << endl;
+	cout <<"number2 : "<< number1 << endl;
+	----------------------------------------------------------
+		مساحة مستطيل
+		short int A, B,Area;
+	cout << "enter A:";
+	cin >> A;
+	cout << "enter B:";
+	cin >> B;
+	Area = A * B;
+	cout << "Area = " << Area << endl;
+	----------------------------------------------------------
+		مساحة مثلث 
+		float a, h, Area;
+	cout << "enter a :";
+	cin >> a;
+	cout << "enter h :";
+	cin >> h;
+	Area = (a / 2) * h;
+	cout << "Area = " << Area << endl;
+	---------------------------------------------------------
+	/ساحة دايرة بدلالة القطر
+		float D, area;
+	cout << "enter Diameter :";
+	cin >> D;
+	area = (3.14 * D * D) / 4;
+	cout << "area = " << area << endl;
+    ---------------------------------------------------------
+	مساحة دايرة بدلالة محيطها
+	float L,Area;
+	const float Pi = 3.14;
+	cout << "enter L :";
+	cin >> L;
+	Area = L * L / (4 * Pi);
+	cout << "Area = " << Area << endl;
+	---------------------------------------------------------
+	مساحة دايرة جوا مثلث متساوي الساقين
+	float a, b, Area;
+	const float pi = 3.14;
+	cout << "enter a :";
+	cin >> a;
+	cout << "enter b :";
+	cin >> b;
+	Area = pi * (b * b / 4) * ((2 * a - b) / (2 * a + b));
+	cout << "Area = " << Area << endl;
+	---------------------------------------------------------
+	حساب رقم مرفوع لاس 2و3و4
+	float number;
+	cout << "enter the number :";
+	cin >> number;
+	cout << "number^2 = " << number * number << endl;
+	cout << "number^3 = " << number * number * number << endl;
+	cout << "number^4 = " << number * number * number*number << endl;
+	---------------------------------------------------------
+	الحصالة
+	float pennies, nickels, dimes, quarters, dollars,Totalpennies;
+	cout << "enter pennies :";
+	cin >> pennies;
+	cout << "enter nickels :";
+	cin >> nickels;
+	cout << "enter dimes :";
+	cin >> dimes;
+	cout << "enter quarters :";
+	cin >> quarters;
+	cout << "enter dollars :";
+	cin >> dollars;
+	Totalpennies = pennies * 1 + nickels * 5 + dimes * 10 + quarters * 25 + dollars * 100;
+	float Totaldollars = Totalpennies / 100;
+	cout << "Total pennies = " << Totalpennies << endl;
+	cout << "Total dollars = " << Totaldollars << endl;
+	------------------------------------------------------------
+	باقي الحساب
+	float Remainder, CashPaid, TotalBill;
+	cout << "enter TotalBill :";
+	cin >> TotalBill;
+	cout << "enter Cashpaid :";
+	cin >> CashPaid;
+	Remainder = CashPaid - TotalBill;
+	cout << "Remainder = " << Remainder << endl;
+	------------------------------------------------------------
+	ضريبة المطعم
+	float billvalue, Totalvalue;
+	cout << "enter billvalue :";
+	cin >> billvalue;
+	Totalvalue = billvalue * 1.1;
+	Totalvalue = Totalvalue * 1.16;
+	cout << "Total value = " << Totalvalue<<endl;
+	------------------------------------------------------------
+	مدة المهمة بالثانية
+	int days, hours, min, sec,Totalseconds;
+	cout << "enter days :";
+	cin >> days;
+	cout << "enter hours :";
+	cin >> hours;
+	cout << "enter min :";
+	cin >> min;
+	cout << "enter sec :";
+	cin >> sec;
+	Totalseconds = days * 24 * 60 * 60 + hours * 60 * 60 + min * 60 + sec;
+	cout << "Total seconds = " << Totalseconds << endl;
+	-------------------------------------------------------------
+	حساب عدد الايام والساعات والدقايق والثواني بادخال عدد الثواني
+	int days, hours, min, sec, numberofsec, m;
+	cout << "enter number of seconds :";
+	cin >> numberofsec;
+	days = numberofsec / (24 * 60 * 60);
+	m = numberofsec % (24 * 60 * 60);
+	hours = m / (60 * 60);
+	m = m % (60 * 60);
+	min = m / 60;
+	m = m % 60;
+	sec = m;
+	cout << days << ":" << hours << ":" << min << ":" << sec << endl;
+	-------------------------------------------------------------
+	عدد شهور القرض
+	short int loanamount, monthleypayment, nofmonths;
+	cout << "enter a loanamount :";
+	cin >> loanamount;
+	cout << "enter monthley payment :";
+	cin >> monthleypayment;
+	nofmonths = loanamount / monthleypayment;
+	cout << "number of months is : " << nofmonths << endl;
+	-------------------------------------------------------------
+    عمليات منطقية على AND  OR  NOT gates
+	bool result1,result2, result3, result4, result5, result6, result7, result8, result9, result10, result11, result12, result13;
+	bool result14, result15, result16, result17, result18, result19, result20, result21, result22, result23, result24 ;
+	result1 = (12 >= 12);
+	cout << result1 << endl;
+	result2 = !(12 >= 12);
+	cout << result2 << endl;
+	result3 = (1 && 1);
+	cout << result3 << endl;
+	result4 = ((7 == 7) && (7 > 5));
+	cout << result4 << endl;
+	result5 = (12 > 7);
+	cout << result5 << endl;
+	result6 = !(12 < 7);
+	cout << result6 << endl;
+	result7 = (1 && 0);
+	cout << result7 << endl;
+	result8 = ((7 == 7) && (7 < 5));
+	cout << result8 << endl;
+	result9 = (8 < 6);
+	cout << result9 << endl;
+	result10 = !(8 < 6);
+	cout << result10 << endl;
+	result11 = (0 || 1);
+	cout << result11 << endl;
+	result12 = ((7 == 7) || (7 < 5));
+	cout << result12 << endl;
+	result13 = (8 == 8);
+	cout << result13 << endl;
+	result14 = !(8 == 8);
+	cout << result14 << endl;
+	result15 = (0 || 0);
+	cout << result15 << endl;
+	result16 = ((7 < 7) || (7 > 5));
+	cout << result16 << endl;
+	result17 = (12 <= 12);
+	cout << result17 << endl;
+	result18 = !(12 >= 12);
+	cout << result18 << endl;
+	result19 = !(0);
+	cout << result19 << endl;
+	result20 = (!(7 == 7) && (7 > 5));
+	cout << result20 << endl;
+	result21 = (7 == 5);
+	cout << result21 << endl;
+	result22 = !(7 == 5);
+	cout << result22 << endl;
+	result23 = !(1 || 0);
+	cout << result23 << endl;
+	result24 = ((7 == 7) && !(7 < 5));
+	cout << result24 << endl;
+	--------------------------------------------------------------
+	عمليات على  AND OR NOT
+	bool result1,result2, result3, result4, result5, result6 ;
+	result1 = ((5>6 && 7==7)||(1 || 0));
+	cout << result1 << endl;
+	result2 = !((5 > 6 && 7 == 7) || (1 || 0));
+	cout << result2 << endl;
+	result3 = !((5 > 6 && 7 == 7) || !(1 || 0));
+	cout << result3 << endl;
+	result4 = ((5 > 6 || 7 == 7) && (1 || 0));
+	cout << result4 << endl;
+	result5 = (((5 > 6 && 7 <= 7) || (8>1 && 4<=3)) && 1);
+	cout << result5 << endl;
+	result6 = (((5 > 6 && !(7 <= 7)) && (8 > 1 || 4 <= 3)) || 1);
+	cout << result6 << endl;
+	--------------------------------------------------------------
+	مساحة دايرة بدلالة اطوال اضلاع مثلث بداخلها
+	float a, b, c, p, area;
+	cout << "enter a:";
+	cin >> a;
+	cout << "enter b:";
+	cin >> b;
+	cout << "enter c:";
+	cin >> c;
+	p = (a + b + c) / 2;
+	area = 3.14 * pow((a * b * c) / (4 * sqrt(p * (p - a) * (p - b) * (p - c))), 2);
+	cout << "area = " << round(area) << endl;
+    --------------------------------------------------------------
+
+
+
+    
