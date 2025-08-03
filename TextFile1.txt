@@ -250,8 +250,435 @@
 	area = 3.14 * pow((a * b * c) / (4 * sqrt(p * (p - a) * (p - b) * (p - c))), 2);
 	cout << "area = " << round(area) << endl;
         --------------------------------------------------------------
+	معلومات شخصية باستخدام ال structure
+	#include<iostream>
+using namespace std;
+struct address
+{
+	string street;
+	string phone;
+	string village;
+
+};
+struct information
+{
+	string name, city, country;
+	short int age;
+	char gender;
+	bool married;
+	address myvillage;
+	address myphone;
+	address mystreet;
+
+
+};
+int main() 
+{
+	information myinform,myaddress;
+	cout << "enter your name :";
+	cin>>myinform.name ;
+	cout << "enter your age :";
+	cin>>myinform.age ;
+	cout << "enter your city :";
+	cin>>myinform.city ;
+	cout << "enter your country :";
+	cin>>myinform.country ;
+	cout << "enter your gender :";
+	cin>>myinform.gender ;
+	cout << "are you married? :";
+	cin>>myinform.married ;
+	cout << "enter your phone number :";
+	cin>>myaddress.myphone.phone ;
+	cout << "enter your street :";
+	cin>>myaddress.mystreet.street ;
+	cout << "enter your village :";
+	cin>>myaddress.myvillage.village;
+	cout <<"Name : "<< myinform.name << endl <<"Age : "<< myinform.age << endl <<"City : "<< myinform.city << endl <<"Country : "<< myinform.country << endl;
+	cout <<"Gender : "<< myinform.gender << endl <<"Married : "<< myinform.married << endl <<"Phone : "<< myaddress.myphone.phone << endl;
+	cout <<"Street : "<< myaddress.mystreet.street << endl <<"Village : "<< myaddress.myvillage.village << endl;
+	----------------------------------------------------------------------------------------------------------------------
+	structure وال enumمعلومات شخصية باستخدام ال 
+	#include<iostream>
+using namespace std;
+struct address
+{
+	string street;
+	string phone;
+	string village;
+
+};
+struct information
+{
+	string name, city, country;
+	short int age;
+	address myvillage;
+	address myphone;
+	address mystreet;
+
+
+};
+enum marriage{single,married};
+enum gender{male,female};
+int main() 
+{
+	marriage statues;
+	gender mygender;
+	information myinform,myaddress;
+	mygender = gender::male;
+	statues = marriage::single;
+	cout << "enter your name :";
+	cin>>myinform.name ;
+	cout << "enter your age :";
+	cin>>myinform.age ;
+	cout << "enter your city :";
+	cin>>myinform.city ;
+	cout << "enter your country :";
+	cin>>myinform.country ;
+	cout << "enter your phone number :";
+	cin>>myaddress.myphone.phone ;
+	cout << "enter your street :";
+	cin>>myaddress.mystreet.street ;
+	cout << "enter your village :";
+	cin>>myaddress.myvillage.village;
+	cout <<"Name : "<< myinform.name << endl <<"Age : "<< myinform.age << endl <<"City : "<< myinform.city << endl <<"Country : "<< myinform.country << endl;
+	cout <<"Gender : "<<mygender << endl <<"Married : "<<statues << endl <<"Phone : "<< myaddress.myphone.phone << endl;
+	cout <<"Street : "<< myaddress.mystreet.street << endl <<"Village : "<< myaddress.myvillage.village << endl;
+	-----------------------------------------------------------------------------------------------
+	متعددة enums و structures طباعة معلومات شخصية باستخدام 
+#include<iostream>
+using namespace std;
+enum encolor { red, blue, yellow, orange };
+enum enGender { Male, Female };
+enum enstatues { Married, Single };
+
+struct stAdress
+{
+	string country, city, streetname;
+};
+struct stContactinfo
+{
+	string phone;
+	string email;
+	stAdress Adress;
+};
+struct stPerson 
+{
+	string firstname;
+	string lastname;
+	stContactinfo contactinfo;
+
+	encolor favcolor;
+	enGender gender;
+	enstatues statues;
+};
+
+int main()
+{
+	stPerson Person1;
+	Person1.firstname = "abdo";
+	Person1.lastname = "elganainy";
+	Person1.gender = enGender::Male;
+	Person1.statues = enstatues::Single;
+	Person1.contactinfo.Adress.country = "Egypt";
+	Person1.contactinfo.Adress.city = "mansora";
+	Person1.contactinfo.Adress.streetname = "elnozha";
+	Person1.contactinfo.phone = "01013749603";
+	Person1.contactinfo.email = "abdo12345@gmail.com";
+	Person1.favcolor = encolor::blue;
+
+	cout <<"First Name : "<< Person1.firstname << endl <<"Last Name : "<< Person1.lastname << endl <<"Gender : "<< Person1.gender << endl <<"Statues : "<< Person1.statues << endl;
+	cout <<"Country : "<< Person1.contactinfo.Adress.country << endl <<"City : "<< Person1.contactinfo.Adress.city << endl <<"Street Name : "<< Person1.contactinfo.Adress.streetname << endl;
+	cout <<"Phone Number : "<< Person1.contactinfo.phone << endl <<"Email : "<< Person1.contactinfo.email << endl <<"Favorite Color : "<< Person1.favcolor << endl;
+
+	return 0;
+	----------------------------------------------------------------------------------------------------------
+    string بعض العمليات على ال 
+	string string1, string2,string3;
+	cout << "enter string1 :";
+	getline(cin, string1);
+	cout << "enter string2 :";
+	getline(cin, string2);
+	cout << "enter string3 :";
+	getline(cin, string3);
+	cout << "the length of string1 = " << string1.length() << endl;
+	cout << string1[0] << string1[2] << string1[4] << string1[7] << endl;
+	string st4 = string2 + string3;
+	cout << st4 << endl;
+	int sum = stoi(string2) * stoi(string3);
+	cout << sum << endl;
+	------------------------------------------------------------------------------
+	functions اول برنامج باستخدام ال 
+void cardinfo()
+{
+	cout << "******************************" << endl;
+	cout << "Name : Abdelahman Ahmed" << endl;
+	cout << "City : Mansora" << endl;
+	cout << "Country : Egypt" << endl;
+	cout << "Age : 21" << endl;
+	cout << "********************************" << endl<<endl;
+
+}
+void stars()
+{
+	cout << "******************" << endl;
+	cout << "******************" << endl;
+	cout << "******************" << endl;
+	cout << "******************" << endl<<endl;
+}
+void printiloveprog()
+{
+	cout << "I love programming!\n\n";
+	cout << "I promise to be the best developer ever!\n\n";
+	cout << "I know it will take some time to practice , but I will achive my goal!\n\n";
+	cout << "Best regards , \n";
+	cout << "Abdelrahman Elganainy.\n\n";
+}
+void Hstars()
+{
+	cout << "*      *\n";
+	cout << "*      *\n";
+	cout << "********\n";
+	cout << "*      *\n";
+	cout << "*      *\n";
+}
+int main()
+{
+	cardinfo();
+	stars();
+	printiloveprog();
+	Hstars();
+	
+	return 0;
+}
+    ------------------------------------------------------------------------------------
+	cin.ignore باستخدام ال getlineحل مشكلة ال 
+	int number;
+	string name, country;
+
+	cout << "enter country : ";
+	cin >> country;
+	cout << "enter name : ";
+	cin.ignore(1, '\n');
+	getline(cin, name);
+	cout << "enter number : ";
+	cin >> number;
+
+	cout << name << endl << country << endl << number << endl;
+	------------------------------------------------------------------------------------
+	والفرق بينهم function ومرة بال procedure برنامج جمع رقمين مرة بال   
+void mysumprocedure()
+{
+	float number1, number2;
+	cout << "enter first number :";
+	cin >> number1;
+	cout << "enter second number :";
+	cin >> number2;
+	cout << "*******************\n" << number1 + number2 << endl;
+}
+float mysumfunction()
+{
+	float number1, number2;
+	cout << "enter first number :";
+	cin >> number1;
+	cout << "enter second number :";
+	cin >> number2;
+	return number1 + number2;
+}
+int main()
+{
+	mysumprocedure();
+	cout <<"*********************"<<endl<< mysumfunction()+5 << endl;
+
+
+	return 0;
+}
+    ------------------------------------------------------------------------------------------
+	للارقام swap بيعمل function برنامج باستخدام ال 
+string swapnumbers(string num1,string num2)
+{
+	string x;
+	x = num1;
+	num1 = num2;
+	num2 = x;
+	return num1+"\n" + num2;
+
+}
+int main()
+{
+	string num1,num2;
+	cout << "number 1 : ";
+	cin >> num1;
+	cout << "number 2 : ";
+	cin >> num2;
+	cout << num1 << endl << num2 << endl;
+	cout<<"swaping :\n"<<swapnumbers(num1, num2) << endl;
+
+
+
+	return 0;
+}
+    ------------------------------------------------------------------------------------
+	functionمساحة المستطيل باستخدام ال
+float recarea(float a,float b)
+{
+	return a * b;
+
+}
+int main()
+{
+	float a, b;
+	cout << "enter a :";
+	cin >> a;
+	cout << "enter b :";
+	cin >> b;
+	cout << "area = " << recarea(a, b) << endl;
+	--------------------------------------------------------------------------------------
+	functionمساحة دايرةبمعلومية نصف القطر باستخدام ال  
+float circlearea(float r)
+{
+	float bi = 3.14;
+	return bi*pow(r,2);
+
+}
+int main()
+{
+	float r;
+	cout << "enter r :";
+	cin >> r;
+
+	cout << "area = " << circlearea(r) << endl;
+	-------------------------------------------------------------------------------------
+	functionمساحة دايرة بمعلومية القطر باستخدام ال
+float circlearea(float d)
+{
+	float bi = 3.14;
+	return bi*pow(d,2)/4;
+
+}
+int main()
+{
+	float d;
+	cout << "enter d :";
+	cin >> d;
+
+	cout << "area = " << circlearea(d) << endl;
+	-------------------------------------------------------------------------------------
+	functionمساحة دايرة بمعلومية محيطها باستخدام ال
+float circlearea(float L)
+{
+	float bi = 3.14;
+	return pow(L,2)/(4*bi);
+
+}
+int main()
+{
+	float L;
+	cout << "enter L :";
+	cin >> L;
+
+	cout << "area = " << circlearea(L) << endl;
+	-------------------------------------------------------------------------------------
+	functionحساب مساحة دايرة محاطه بمثلث متساوي الساقين باستخدام ال
+float circlearea(float a,float b)
+{
+	float bi = 3.14;
+	return bi*pow(b,2)/4*((2*a-b)/(2*a+b));
+
+}
+int main()
+{
+	float a,b;
+	cout << "enter a :";
+	cin >> a;
+	cout << "enter b :";
+	cin >> b;
+
+	cout << "area = " << circlearea(a,b) << endl;
+	--------------------------------------------------------------------------------------
+	functionحساب مساحة دايرة جواها مثلث غير متساوي الاضلاع باستخدام ال
+float circlearea(float a,float b,float c)
+{
+	float bi = 3.14;
+	float p=(a+b+c)/2;
+	return bi* pow((a * b * c) / (4 * sqrt(p * (p - a) * (p - b) * (p - c))), 2);
+
+}
+int main()
+{
+	float a,b,c;
+	cout << "enter a :";
+	cin >> a;
+	cout << "enter b :";
+	cin >> b;
+	cout << "enter c :";
+	cin >> c;
+
+	cout << "area = " << circlearea(a,b,c) << endl;
+	--------------------------------------------------------------------------------------
+	~~ power(2,3,4) of number using functions ~~
+float powerof2(float number)
+{
+	return pow(number, 2);
+};
+float powerof3(float number)
+{
+	return pow(number, 3);
+
+};
+float powerof4(float number)
+{
+	return pow(number, 4);
+};
+int main()
+{
+	float number;
+	cout << "enter number :";
+	cin >> number;
+
+	cout << "number ^2 = " << powerof2(number) << endl;
+	cout << "number ^3 = " << powerof3(number) << endl;
+	cout << "number ^4 = " << powerof4(number) << endl;
+	---------------------------------------------------------------------------------------
+	~~ power of number using functions~~
+float powerofm(float number,float m)
+{
+	return pow(number, m);
+};
+
+int main()
+{
+	float number,m;
+	cout << "enter number :";
+	cin >> number;
+	cout << "enter m :";
+	cin >> m;
+
+	cout << "number ^m = " << powerofm(number,m) << endl;
+	---------------------------------------------------------------------------------------
+	~~task duration in secoond using functions~~
+float taskduration(float days,float hours,float minutes,float seconds)
+{
+	return days*24*60*60+hours*60*60+minutes*60+seconds;
+};
+
+int main()
+{
+	float days,hours,minutes,seconds;
+	cout << "enter days :";
+	cin >> days;
+	cout << "enter hours :";
+	cin >> hours;
+	cout << "enter minutes :";
+	cin >> minutes;
+	cout << "enter seconds :";
+	cin >> seconds;
+
+	cout << "Task duration in seconds = " << taskduration(days,hours,minutes,seconds) << endl;
+	---------------------------------------------------------------------------------------
+
         
 
 
 
     
+
