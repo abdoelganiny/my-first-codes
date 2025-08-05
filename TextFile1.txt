@@ -1298,6 +1298,96 @@ int main()
 	return 0;
 }
 ----------------------------------------------------------------------------------------------------------------
+~~months name using nested functions and enums~~
+enum enmonth { jan = 1, feb = 2, march = 3, april = 4, may = 5, june = 6, july = 7,agust = 8,september = 9,oct = 10,november,december };
+void monthmenu()
+{
+	cout << "********************************\n";
+	cout << "chose number : jan = 1, feb = 2, march = 3, april = 4, may = 5, june = 6 \n";
+	cout << "july = 7,agust = 8,september = 9,oct = 10, november = 11, december = 12\n";
+	cout << "********************************\n";
+}
+enmonth getmonth()
+{
+	enmonth month;
+	int m;
+	cin >> m;
+	return (enmonth)m;
+}
+string monthname(enmonth month)
+{
+	switch (month)
+	{
+	case enmonth::jan:
+
+		return " JAN " ;
+		break;
+
+	case enmonth::feb:
+
+		return " MONDAY ";
+		break;
+
+	case enmonth::march:
+
+		return " MARCH ";
+		break;
+
+	case enmonth::april:
+
+		return " APRIL";
+		break;
+
+	case enmonth::may:
+
+		return " MAY";
+		break;
+
+	case enmonth::june:
+
+		return " JUNE" ;
+		break;
+
+	case enmonth::july :
+
+		return " JULY";
+		break;
+
+	case enmonth::agust:
+
+		return " AGUST ";
+		break;
+	case enmonth::september:
+
+		return " SEPTEMBER";
+		break;
+	case enmonth::oct:
+
+		return " OCT";
+		break;
+	case enmonth::november:
+
+		return " NOVEMBER";
+		break;
+	case enmonth::december:
+
+		return " DECEMBER";
+		break;
+	default:
+		return"not month name!";
+
+	}
+
+}
+
+int main()
+{
+	monthmenu();
+	cout << "this month is : " << monthname(getmonth()) << endl;
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------------------------
 
 
         
@@ -1305,5 +1395,6 @@ int main()
 
 
     
+
 
 
