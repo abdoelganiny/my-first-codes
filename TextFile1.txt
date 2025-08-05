@@ -675,10 +675,635 @@ int main()
 
 	cout << "Task duration in seconds = " << taskduration(days,hours,minutes,seconds) << endl;
 	---------------------------------------------------------------------------------------
+~~info card using structures and procedure~~
+struct strinfo
+{
+	string name, city, country;
+	int age, monthleysalary;
+	char gender;
+	bool marriage;
+};
+void readinfo(strinfo &info)
+{
+	cout << "enter name :";
+	cin >> info.name;
+	cout << "enter country :";
+	cin >> info.country;
+	cout << "enter city :";
+	cin >> info.city;
+	cout << "enter age :";
+	cin >> info.age;
+	cout << "enter monthley salary :";
+	cin >> info.monthleysalary;
+	cout << "enter gender :";
+	cin >> info.gender;
+	cout << "are you married ?";
+	cin >> info.marriage;
+};
+void printinfo(strinfo info)
+{
+	cout << "**************************************\n";
+	cout << "Name : " << info.name << endl;
+	cout << "Age : " << info.age << endl;
+	cout << "Country : " << info.country << endl;
+	cout << "City : " << info.city << endl;
+	cout << "Monthly salary : " << info.monthleysalary << endl;
+	cout << "Yearly salary : " << info.monthleysalary*12 << endl;
+	cout << "Gender : " << info.gender << endl;
+	cout << "Statues : " << info.marriage << endl;
+	cout << "***************************************\n\n";
+
+};
+int main()
+{
+	strinfo person1;
+	readinfo(person1);
+	printinfo(person1);
+
+	strinfo person2;
+	readinfo(person2);
+	printinfo(person2);
+
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------
+~~first program using arrays~~	
+	float x[3], average;
+	cout << "grade 1 = ";
+	cin >> x[0];
+	cout << "grade 2 = ";
+	cin >> x[1];
+	cout << "grade 3 = ";
+	cin >> x[2];
+	average = (x[0] + x[1] + x[2]) / 3;
+	cout << "Average = " << average << endl;
+---------------------------------------------------------------------------------------------------
+~~Grades average using arrays with functions~~
+void readgrades (float grade[3])
+{
+	cout << "grade 1 = ";
+	cin >> grade[0];
+	cout << "grade 2 = ";
+	cin >> grade[1];
+	cout << "grade 3 = ";
+	cin >> grade[2];
+};
+float average(float grade[3])
+{
+	return ((grade[0] + grade[1] + grade[2]) / 3);
+};
+void printaverage(float grade[3])
+{
+
+	cout << "average = " <<average( grade) << endl;
+}
+int main()
+{
+	float grade[3];
+	readgrades(grade);
+	average(grade);
+	printaverage(grade);
+
+	return 0;
+}
+
+----------------------------------------------------------------------------------------------------
+~~information card for many persons using arrays of structures~~
+struct strinfo
+{
+	string firstname, lastname;
+	int age, phone;
+};
+void getinfo(strinfo&info)
+{
+	cout << "enter first name :";
+	cin >>info.firstname;
+	cout << "enter last name:";
+	cin >> info.lastname;
+	cout << "enter age :";
+	cin >>info.age;
+	cout << "enter phone :";
+	cin >> info.phone;
+	cout << "*********************************\n";
+};
+void printinfo(strinfo info)
+{
+	cout << "*********************************\n";
+	cout << info.firstname << endl;
+	cout << info.lastname << endl;
+	cout << info.age << endl;
+	cout << info.phone << endl;
+	cout << "*********************************\n";
+};
+void personsinfo(strinfo person[2])
+{
+	getinfo(person[0]);
+	getinfo(person[1]);
+};
+void printpersonsinfo(strinfo person[2])
+{
+	printinfo(person[0]);
+	printinfo(person[1]);
+};
+
+int main()
+{
+	strinfo person[2];
+	personsinfo(person);
+	printpersonsinfo(person);
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------
+~~first program with if statement~~
+	int age;
+	bool license;
+	cout << "enter age :";
+	cin >> age;
+	cout << "are you have license ?";
+	cin >> license;
+	if (age > 21 && license == 1)
+	{
+		cout << "Hired"<<endl;
+	}
+	else
+	{
+		cout << "Rejected" << endl;
+	}
+	cout << "\n done\n";
+	return 0;
+---------------------------------------------------------------------------------------------
+~~if statement~~
+	int mark;
+	cout << "enter mark :";
+	cin >> mark;
+	if (mark >= 50)
+	{
+		cout << "Pass\n";
+	}
+	else
+	{
+		cout << "Fail\n";
+	}
+
+
+	return 0;
+---------------------------------------------------------------------------------------------
+~~if statement~~
+	int mark1,mark2,mark3,average;
+	cout << "enter mark1 :";
+	cin >> mark1;
+	cout << "enter mark2 :";
+	cin >> mark2;
+	cout << "enter mark3 :";
+	cin >> mark3;
+	average = (mark1 + mark2 + mark3) / 3;
+	if (average >= 50)
+	{
+		cout << "average = " << average << endl;
+		cout << "Pass\n";
+	}
+	else
+	{
+		cout << "average = " << average << endl;
+		cout << "Fail\n";
+	}
+
+
+	return 0;
+--------------------------------------------------------------------------------------------
+~~if statement~~
+	int age;
+	cout << "enter age :";
+	cin >> age;
+
+	if  ( 18 <= age&& age <= 45)
+	{
+
+		cout << "valid\n";
+	}
+	else
+	{
+
+		cout << "invalid\n";
+	}
+
+
+	return 0;
+---------------------------------------------------------------------------------------------
+~~if statement~~
+	int balance = 7500, pin;
+	cout << "enter pin code :";
+	cin >> pin;
+
+	if (pin == 1234)
+	{
+		cout << "your balance = " << balance << endl;
+	}
+	else
+	{
+		cout << "wrong pin!\n";
+	}
+
+	return 0;
+---------------------------------------------------------------------------------------------
+~~if & else if & else statement~~
+	int grade;
+	cout << "enetr grade :";
+	cin >> grade;
+
+	if (grade > 89)
+	{
+		cout << "A\n";
+	}
+	else if (grade > 79)
+	{
+		cout << "B\n";
+	}
+	else if (grade > 69)
+	{
+		cout << "C\n";
+	}
+	else if (grade > 59)
+	{
+		cout << "D\n";
+	}
+	else if (grade > 49)
+	{
+		cout << "E\n";
+	}
+	else
+	{
+		cout << "F\n";
+	}
+	return 0;
+------------------------------------------------------------------------------------------------
+~~if & else if & else statement~~
+	float totalsales,commission;
+	cout << "enetr totalsales :";
+	cin >> totalsales;
+
+	if (totalsales >= 1000000)
+	{
+		commission = 0.01 * totalsales;
+		cout << "Commission = "<<commission<<endl;
+	}
+	else if (totalsales >= 500000)
+	{
+		commission = 0.02 * totalsales;
+		cout << "Commission = " << commission << endl;
+	}
+	else if (totalsales >= 100000)
+	{
+		commission = 0.03 * totalsales;
+		cout << "Commission = " << commission << endl;
+	}
+	else if (totalsales >= 50000)
+	{
+		commission = 0.05 * totalsales;
+		cout << "Commission = " << commission << endl;
+	}
+	else
+	{
+		commission = 0 * totalsales;
+		cout << "Commission = " << commission << endl;
+	}
+	return 0;
+-------------------------------------------------------------------------------------
+~~if & else if & else statement~~
+	float number1,number2,result;
+	string operation;
+	cout << "enter number1 :";
+	cin >> number1;
+	cout << "enter number2 :";
+	cin >> number2;
+	cout << "enter operation :";
+	cin >> operation;
+
+	if (operation == "+")
+	{
+		result = number1 + number2 ;
+		cout << "result = "<< result <<endl;
+	}
+	else if (operation == "-")
+	{
+		result = number1 - number2;
+		cout << "result = " << result << endl;
+	}
+	else if (operation == "*")
+	{
+		result = number1 * number2;
+		cout << "result = " << result << endl;
+	}
+	else if (operation == "/")
+	{
+		result = number1 / number2;
+		cout << "result = " << result << endl;
+	}
+	else
+	{
+		cout << "Wrong operation! " << endl;
+	}
+	return 0;
+-------------------------------------------------------------------------------------------
+~~if & else if & else statement~~
+{
+	int day;
+
+	cout << "enter day :";
+	cin >> day;
+
+	if (day == 1)
+	{
+
+		cout << "Its sunday "<<endl;
+	}
+	else if (day == 2)
+	{
+
+		cout << "Its monday " << endl;
+	}
+	else if (day == 3)
+	{
+
+		cout << "Its tuesday " << endl;
+	}
+	else if (day == 4)
+	{
+
+		cout << "Its wendnesday " << endl;
+	}
+	else if (day == 5)
+	{
+
+		cout << "Its thursday " << endl;
+	}
+	else if (day == 6)
+	{
+
+		cout << "Its friday " << endl;
+	}
+	else if (day == 7)
+	{
+
+		cout << "Its saturday " << endl;
+	}
+	else
+	{
+		cout << "Wrong Day! " << endl;
+	}
+---------------------------------------------------------------------------------------------
+~~if & else if & else statement~~
+	int day;
+
+	cout << "enter day :";
+	cin >> day;
+
+	if (day == 1)
+	{
+
+		cout << "Its january "<<endl;
+	}
+	else if (day == 2)
+	{
+
+		cout << "Its february " << endl;
+	}
+	else if (day == 3)
+	{
+
+		cout << "Its march " << endl;
+	}
+	else if (day == 4)
+	{
+
+		cout << "Its abril " << endl;
+	}
+	else if (day == 5)
+	{
+
+		cout << "Its may " << endl;
+	}
+	else if (day == 6)
+	{
+
+		cout << "Its june " << endl;
+	}
+	else if (day == 7)
+	{
+
+		cout << "Its july " << endl;
+	}
+	else if (day == 8)
+	{
+
+		cout << "Its august " << endl;
+	}
+	else if (day == 9)
+	{
+
+		cout << "Its september " << endl;
+	}
+	else if (day == 10)
+	{
+
+		cout << "Its october " << endl;
+	}
+	else if (day == 11)
+	{
+
+		cout << "Its november " << endl;
+	}
+	else if (day == 12)
+	{
+
+		cout << "Its december " << endl;
+	}
+	else
+	{
+		cout << "Wrong month! " << endl;
+	}
+	return 0;
+------------------------------------------------------------------------------------------
+~~switch case statement~~
+int main()
+{
+	float number1, number2, result;
+	int operation;
+	int c;
+
+	cout << "enter number1 :";
+	cin >> number1;
+	cout << "enter number2 :";
+	cin >> number2;
+	cout << "chose operation : 1=+ , 2=- , 3=* , 4=/ chose number\n";
+	cout << "enter operation :";
+	cin >> operation;
+
+	switch (operation)
+	{
+	case 1:
+		result = number1 + number2;
+		cout << "result = " << result << endl;
+		break;
+
+	case 2:
+
+		result = number1 - number2;
+		cout << "result = " << result << endl;
+		break;
+	case 3:
+
+		result = number1 * number2;
+		cout << "result = " << result << endl;
+		break;
+	case 4:
+
+		result = number1 / number2;
+		cout << "result = " << result << endl;
+		break;
+	case 5:
+
+		cout << "Wrong operation! " << endl;
+		break;
+	}
+---------------------------------------------------------------------------------------------
+~~switch case statement & enums~~
+enum enday { sunday = 1, monday = 2, tuseday = 3, wednesday = 4, thursday = 5, friday = 6, saturday = 7 };
+int main()
+{
+	enday day;
+	int c;
+	cout << "chose number : sunday = 1, monday = 2, tuseday = 3, wednesday = 4, thursday = 5, friday = 6, saturday = 7\n";
+	cout << "enter day :";
+	cin >> c;
+	day = (enday)c;
+
+	switch (day)
+	{
+	case 1:
+
+		cout << "Its sunday " << endl;
+		break;
+
+	case 2:
+
+		cout << "Its monday " << endl;
+		break;
+
+	case 3:
+
+		cout << "Its tuseday " << endl;
+		break;
+
+	case 4:
+
+		cout << "Its wednesday " << endl;
+		break;
+
+	case 5:
+
+		cout << "Its thursday " << endl;
+		break;
+
+	case 6:
+
+		cout << "Its friday" << endl;
+		break;
+
+	case 7:
+
+		cout << "Its saturday " << endl;
+		break;
+
+	case 8:
+
+		cout << "wrong day! " << endl;
+		break;
+
+	}
+	
+	return 0;
+------------------------------------------------------------------------------------------------
+~~week days using nested functions with enums~~
+enum enweekday { sunday = 1, monday = 2, tuseday = 3, wednesday = 4, thursday = 5, friday = 6, saturday = 7,other };
+void weekdaymenu()
+{
+	cout << "********************************\n";
+	cout << "chose number : sunday = 1, monday = 2, tuseday = 3, wednesday = 4, thursday = 5, friday = 6, saturday = 7\n";
+	cout << "enter day :\n";
+	cout << "********************************\n";
+}
+enweekday getday()
+{
+	enweekday day;
+	int wd;
+	cin >> wd;
+	return (enweekday)wd;
+}
+string dayname(enweekday day)
+{
+	switch (day)
+	{
+	case enweekday::sunday:
+
+		return " sunday " ;
+		break;
+
+	case enweekday::monday:
+
+		return " monday ";
+		break;
+
+	case enweekday::tuseday:
+
+		return " tuseday ";
+		break;
+
+	case enweekday::wednesday:
+
+		return " wednesday";
+		break;
+
+	case enweekday::thursday:
+
+		return " thursday";
+		break;
+
+	case enweekday::friday:
+
+		return " friday" ;
+		break;
+
+	case enweekday::saturday:
+
+		return " saturday";
+		break;
+
+	case enweekday::other:
+
+		return "wrong day! ";
+		break;
+
+	}
+
+}
+
+int main()
+{
+	weekdaymenu();
+	cout << "today is : " << dayname(getday()) << endl;
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------------------
+
 
         
 
 
 
     
+
 
