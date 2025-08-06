@@ -1388,6 +1388,60 @@ int main()
 	return 0;
 }
 ---------------------------------------------------------------------------------------------------------------------
+~~information card using (for loop) & (array) ~~
+struct strinfo
+{
+	string firstname, lastname, phone;
+};
+void getinfo(strinfo& info)
+{
+	cout << "enter first name :";
+	cin >> info.firstname;
+	cout << "enter last name :";
+	cin >> info.lastname;
+	cout << "enter phone :";
+	cin >> info.phone;
+}
+void printinfo(strinfo info)
+{
+	cout << "***************************\n";
+	cout << "first name : " << info.firstname << endl;
+	cout << "last name : " << info.lastname << endl;
+	cout << "phone : " << info.phone << endl;
+	cout << "***************************\n";
+
+}
+void personinfo(strinfo person[100], int &length)
+{
+	cout << "enter from 1 to 100 , how many persons ? \n";
+	cin >> length;
+
+	for (int i = 0; i <= length - 1; i++)
+	{
+		cout << "enter information for person " << i + 1 << " :\n";
+		getinfo(person[i]);
+		cout << "*****************************\n";
+	}
+}
+void printpersoninfo(strinfo person[100],int length)
+{
+	for (int i = 0; i <= length - 1; i++)
+	{
+		cout << "\n";
+		printinfo(person[i]);
+	}
+}
+int main()
+{
+	strinfo person[100];
+	int length=0;
+
+	personinfo(person,length);
+	printpersoninfo(person,length);
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------
 
 
         
@@ -1395,6 +1449,7 @@ int main()
 
 
     
+
 
 
 
