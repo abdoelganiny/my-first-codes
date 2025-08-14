@@ -1442,13 +1442,2372 @@ int main()
 	return 0;
 }
 -----------------------------------------------------------------------------------------------
+~~From AA to ZZ using nested for loops~~	
+	for (int i=65;i<=90;i++)
+	{
+		for (int j = 65;j <= 90;j++)
+		{
+			cout << char(i)<<char(j)<<endl;
+		}
+	}
 
+	return 0;
+------------------------------------------------------------------------------------------------
+~~ using nested for loops~~
+	for (int i=1;i<=10;i++)
+	{
+		for (int j = 10;j >= i;j--)
+		{
+			cout << "*";
+		}
+		cout << "\n";
+	}
+
+	return 0;
+------------------------------------------------------------------------------------------------
+~~Nested for loops~~
+	for (int i=10;i>=1;i--)
+	{
+		for (int j = 1;j <= i;j++)
+		{
+			cout << j;
+		}
+		cout << "\n";
+	}
+
+	return 0;
+-----------------------------------------------------------------------------------------------
+~~Nested for loops~~
+	for (int i=1;i<=10;i++)
+	{
+		for (int j = 1;j <= i;j++)
+		{
+			cout << j;
+		}
+		cout << "\n";
+	}
+
+	return 0;
+-----------------------------------------------------------------------------------------------
+~~Nested for loops~~
+	for (int i=65;i<=70;i++)
+	{
+		for (int j = 65;j <= i;j++)
+		{
+			cout <<char(j);
+		}
+		cout << "\n";
+	}
+
+	return 0;
+-----------------------------------------------------------------------------------------------
+~~Nested for loops~~
+	for (int i=1;i<=10;i++)
+	{
+		for (int j = i;j <= 10;j++)
+		{
+			cout << j ;
+		}
+		cout << "\n";
+	}
+
+	return 0;
+---------------------------------------------------------------------------------------------
+~~while loop~~
+	int number = 10;
+	while (number >= 1)
+	{
+		cout << number << endl;
+		number--;
+	}
+
+	return 0;
+-----------------------------------------------------------------------------------------------
+~~Sum of odd numbers from 1 to N using while loop~~
+	int number = 1;
+	int N,sum=0;
+	cout << "enter N :\n";
+	cin >> N;
+	while (number <= N)
+	{
+		sum += number;
+		number=number+2;
+	}
+	cout << "sum of odd number from 1 to" << N <<" = "<< sum << endl;
+	return 0;
+-----------------------------------------------------------------------------------------------
+~~Sum of even numbers from 1 to N using while loop~~
+	int number = 2;
+	int N,sum=0;
+	cout << "enter N :\n";
+	cin >> N;
+	while (number <= N)
+	{
+		sum += number;
+		number=number+2;
+	}
+	cout << "sum of odd number from 1 to" << N <<" = "<< sum << endl;
+	return 0;
+-----------------------------------------------------------------------------------------------
+~~The factorial of numbers using while loop~~
+{
+	int number,N=1,factorial=1;
+	cout << "enter number : ";
+	cin >> number;
+	while (number <= 0)
+	{
+		cout << "enter positive number ! \n";
+		cin >> number;
+	}
+	while (N <= number)
+	{
+		factorial *= N;
+		N++;
+	}
+	cout << "Factorial of " << number << " = " << factorial << endl;
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------
+~~number power of number using while loop ~~
+	int number, M,P=1;
+	int counter = 1;
+	cout << "enter number : ";
+	cin >> number;
+	cout << "enter M : ";
+	cin >> M;
+	if (M == 0)
+	{
+		cout << "power of 0 = " << P;
+	}
+	else
+	{
+		while (M < 0)
+		{
+			cout << "enter positive power : ";
+			cin >> M;
+		}
+		while (counter <= M)
+		{
+			P *= number;
+			counter++;
+		}
+		cout << number << " power of " << M << " = " << P << endl;
+	}
+	return 0;
+----------------------------------------------------------------------------------------------
+~~user enter numbers and when he enter -99 the programm will print sum of numbers~~
+	int number, sum = 0;
+	
+	cout << "enter number : ";
+	cin >> number;
+
+	while (number != -99)
+	{
+		sum += number;
+		cout << "enter number : ";
+		cin >> number;
+	}
+	cout << "Sum of numbers = " << sum << endl;
+
+	return 0;
+----------------------------------------------------------------------------------------------
+~~characters from A to B using while loop~~
+{
+	int character=65;
+	while (character <= 90)
+	{
+		cout << char(character) << endl;
+		character++;
+	}
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------
+~~PIN code and card locked after 3 failed attemps~~
+{
+	int PIN, balance = 7500, attemps=0;
+	while (attemps < 3)
+	{
+		cout << "enter PIN code : ";
+		cin >> PIN;
+
+		if (PIN == 1234)
+		{
+			cout << "balance = " << balance << endl;
+			return 0;
+		}
+		else
+		{
+			cout << "Wrong PIN code!\n";
+			attemps++;
+
+		}
+	}
+	cout << "Card locked!\n";
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------
+~~break statement~~
+	int N = 20;
+	int arr[10] = { 10,20,44,55,33,22,415,651,4,5 };
+	for (int i = 0; i <=10; i++)
+	{
+		cout << "iteration : " << i + 1 << endl;
+		if(N==arr[i])
+		{
+			cout <<N<<"found at iteration "<< i+1 << endl;
+			break; 
+		}
+	}
+
+	return 0;
+---------------------------------------------------------------------------------------------
+~~continue statement~~
+	int number;
+	int sum=0;
+	for (int i = 1; i <=5; i++)
+	{
+		cout << "enter number : ";
+		cin >> number;
+		if(number>=50)
+		{
+			continue;
+		}
+		sum += number;
+
+	}
+	cout << "sum of numbers = " << sum << endl;
+
+	return 0;
+----------------------------------------------------------------------------------------------
+~~number odd or even using function and procedure only~~
+enum ennumbertype { odd = 1, even = 2 };
+int readnumber()
+{
+	int number;
+	cout << "enter number :";
+	cin>>number;
+	return number;
+}
+ennumbertype chekoddoreven(int number)
+{
+	int result=number%2;
+	if (result == 0)
+		return ennumbertype::even;
+	else
+		return ennumbertype::odd;
+
+}
+void printtype(ennumbertype numbertype)
+{
+	if (numbertype == ennumbertype::even)
+		cout << "your number is even";
+	else
+		cout << "your number is odd";
+}
+
+int main()
+{
+	printtype(chekoddoreven(readnumber()));
+
+	return 0;
+}
+-------------------------------------------------------------------------------------
+~~Hire a driver case 1 using functions and procedure only~~
+struct stinfo
+{
+	int age;
+	bool license;
+};
+stinfo readinfo()
+{
+	stinfo info;
+	cout << "enter your age :";
+	cin >> info.age;
+	cout << "are you have license ?";
+	cin >> info.license;
+	return info;
+}
+void printhiredorrejected(stinfo info)
+{
+	if (info.age >= 21 && info.license == 1)
+		cout << "Hired";
+	else
+		cout << "Rejected";
+}
+int main()
+{
+
+	printhiredorrejected(readinfo());
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------
+~~Hire a driver case 2 using functions and procedure only~~
+struct stinfo
+{
+	int age;
+	bool license,recommendation;
+};
+stinfo readinfo()
+{
+	stinfo info;
+	cout << "enter your age :";
+	cin >> info.age;
+	cout << "are you have license ?";
+	cin >> info.license;
+	cout << "are you have recommendation ?";
+	cin >> info.recommendation;
+	return info;
+}
+bool isaccepted(stinfo info)
+{
+	if (info.recommendation)
+		return true;
+	else
+	    return (info.age >= 21 && info.license);
+}
+void printresult(stinfo info)
+{
+	if (isaccepted(info))
+		cout << "\nHired";
+	else
+		cout << "\nRejected";
+}
+int main()
+{
+
+	printresult(readinfo());
+
+	return 0;
+}
+-----------------------------------------------------------------------------------
+~~half of number using function and procedures~~
+int readnumber()
+{
+	int number;
+	cout << "enter number :";
+	cin >> number;
+	return number;
+}
+float halfnumber(int number)
+{
+
+	return  (float)number / 2;
+}
+void printresult(int number)
+{
+	string result = "Half of " + to_string(number) + "= " + to_string(halfnumber(number));
+	cout << result << endl;
+}
+int main()
+{
+	printresult(readnumber());
+	return 0;
+}
+-------------------------------------------------------------------------------------
+~~check pass or fail using functions & procedures~~
+enum enpassfail { pass=1, fail=2 };
+int readmark()
+{
+	int mark;
+	cout << "enter Mark :";
+	cin >> mark;
+	return mark;
+}
+enpassfail checkmark(int mark)
+{
+	if (mark >= 50)
+		return enpassfail::pass;
+	else
+		return enpassfail::fail;
+}
+void printresult(int mark)
+{
+	if (checkmark(mark) == enpassfail::pass)
+		cout << "Pass" << endl;
+	else
+		cout << "Fail" << endl;
+}
+int main()
+{
+	printresult(readmark());
+	return 0;
+}
+--------------------------------------------------------------------------------
+~~check pass or fail average using functions & procedures~~
+enum enpassfail{pass=1,fail=2};
+void readnumbers(int& num1, int& num2, int& num3)
+{
+	cout << "enter number 1 :";
+	cin >> num1;
+	cout << "enter number 2 :";
+	cin >> num2;
+	cout << "enter number 3 :";
+	cin >> num3;
+}
+int sumofnumbers(int num1, int num2, int num3)
+{
+	int sum;
+	sum = num1 + num2 + num3;
+	return sum;
+}
+float calculateaverage(int num1, int num2, int num3)
+{
+	float average = (float)sumofnumbers(num1,num2,num3)/ 3;
+	return average;
+}
+enpassfail checkaverage(float average)
+{
+	if (average >= 50)
+		return enpassfail::pass;
+	else
+		return enpassfail::fail;
+}
+void printresult(float average)
+{
+
+	cout << "average = " << average << endl;
+	if (checkaverage(average) == enpassfail::pass)
+		cout << "Pass\n";
+	else
+		cout << "Fail\n";
+
+}
+int main()
+{
+	int num1, num2, num3;
+
+	readnumbers(num1, num2, num3);
+	printresult(calculateaverage(num1, num2, num3));
+	return 0;
+}
+----------------------------------------------------------------------------------
+~~Max of 2 numbers using functions and procedures~~
+void readnumber(int& num1, int& num2)
+{
+	cout << "enter number 1 :";
+	cin >> num1;
+	cout << "enter number 2 :";
+	cin >> num2;
+}
+int Maxof2numbers(int num1, int num2)
+{
+	if (num1 > num2)
+		return num1;
+	else
+		return num2;
+}
+void printMax(int Max)
+{
+	cout << "The Max Number is " << Max << endl;
+}
+int main()
+{
+	int num1, num2;
+	readnumber(num1, num2);
+	printMax(Maxof2numbers(num1, num2));
+
+	return 0;
+}
+--------------------------------------------------------------------------------
+~~Max of 3 numbers using functions and procedures~~
+void readnumber(int& num1, int& num2, int& num3)
+{
+	cout << "enter number 1 :";
+	cin >> num1;
+	cout << "enter number 2 :";
+	cin >> num2;
+	cout << "enter number 3 :";
+	cin >> num3;
+}
+int Maxof3numbers(int num1, int num2, int num3)
+{
+	if (num1 > num2)
+		if (num1 > num3)
+			return num1;
+		else
+			return num3;
+	else
+		if (num2 > num3)
+			return num2;
+		else
+			return num3;
+}
+void printMax(int Max)
+{
+	cout << "The Max Number is " << Max << endl;
+}
+int main()
+{
+	int num1, num2, num3;
+	readnumber(num1, num2, num3);
+	printMax(Maxof3numbers(num1, num2, num3));
+
+	return 0;
+}
+--------------------------------------------------------------------------------------
+~~Swap Numbers Using Functions and Procedures~~
+void ReadNumbers(int& N1, int& N2)
+{
+	cout << "Enter Number 1 :";
+	cin >> N1;
+	cout << "Enter Number 2 :";
+	cin >> N2;
+}
+void SwapNumbers(int& N1, int& N2)
+{
+	int Temple;
+	Temple = N1;
+	N1 = N2;
+	N2 = Temple;
+}
+void PrintNumbers(int n1, int n2)
+{
+	cout << "\nNumber 1 = " << n1;
+	cout << "\nNumber 2 = " << n2<<endl;
+}
+
+int main()
+{
+	int Number1, Number2;
+	ReadNumbers(Number1, Number2);
+	PrintNumbers(Number1, Number2);
+	SwapNumbers(Number1, Number2);
+	PrintNumbers(Number1, Number2);
+
+	return 0;
+}
+--------------------------------------------------------------------------------------
+~~Rectangular Area~~
+void ReadNumbers(float& A, float& B)
+{
+	cout << "Enter Rectangular Length A :";
+	cin >> A;
+	cout << "Enter Rectangular Wedth B :";
+	cin >> B;
+}
+float CalculateRectangleArea(float A, float B)
+{
+	return A * B;
+}
+void PrintArea(float Area)
+{
+	cout << "Area = " << Area;
+}
+
+int main()
+{
+	float Length, Wedth;
+	ReadNumbers(Length, Wedth);
+	PrintArea(CalculateRectangleArea(Length, Wedth));
+
+	return 0;
+}
+---------------------------------------------------------------------------------------
+~~Rectangular Area by Length and Diagonal~~
+void ReadNumbers(float& A, float& D)
+{
+	cout << "Enter Rectangular Length A :";
+	cin >> A;
+	cout << "Enter Rectangular Diagonal D :";
+	cin >> D;
+}
+float CalculateRectangleArea(float A, float D)
+{
+	return A * sqrt(pow(D,2)-pow(A,2));
+}
+void PrintArea(float Area)
+{
+	cout << "Area = " << Area;
+}
+
+int main()
+{
+	float Length, Diagonal;
+	ReadNumbers(Length, Diagonal);
+	PrintArea(CalculateRectangleArea(Length, Diagonal));
+
+	return 0;
+}
+---------------------------------------------------------------------------------------
+~~Triangle Area by Length and Height~~
+void ReadNumbers(float& a, float& h)
+{
+	cout << "Enter Triangle Length a :";
+	cin >> a;
+	cout << "Enter Triangle Hight h :";
+	cin >> h;
+}
+float CalculateTriangleArea(float A, float h)
+{
+	return 0.5*A * h;
+}
+void PrintArea(float Area)
+{
+	cout << "Triangle Area = " << Area;
+}
+
+int main()
+{
+	float Length, Hight;
+	ReadNumbers(Length, Hight);
+	PrintArea(CalculateTriangleArea(Length, Hight));
+
+	return 0;
+}
+------------------------------------------------------------------------------------------
+~~Circle Area by Diameter~~
+float ReadDiameter()
+{
+	float d;
+	cout << "Enter Diameter :";
+	cin >> d;
+	return d;
+}
+float CalculateCircleAreabyDiameter(float d)
+{
+	const float bi = 3.141592653589793238;
+	return (bi*pow(d,2))/4;
+}
+void PrintArea(float Area)
+{
+	cout << "Circle Area = " << Area;
+}
+
+int main()
+{
+
+	
+	PrintArea(CalculateCircleAreabyDiameter(ReadDiameter()));
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------
+~~Circle Area by Circumference~~
+float ReadCircumference()
+{
+	float L;
+	cout << "Enter Circumference :";
+	cin >> L;
+	return L;
+}
+float CalculateCircleAreabyCircumference(float L)
+{
+	const float bi = 3.141592653589793238;
+	return pow(L,2)/(4*bi);
+}
+void PrintArea(float Area)
+{
+	cout << "Circle Area = " << Area;
+}
+
+int main()
+{
+
+	
+	PrintArea(CalculateCircleAreabyCircumference(ReadCircumference()));
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------
+~~Circle Area by Isosceles Triangle~~
+void ReadIsoscelesTriangleSides(float& a,float& b)
+{
+
+	cout << "Enter a :";
+	cin >> a;
+	cout << "Enter b :";
+	cin >> b;
+}
+float CalculateCircleAreabyIsoscelesTriangle(float a,float b)
+{
+	const float bi = 3.141592653589793238;
+	return bi*pow(b,2)/4*((2*a-b)/(2*a+b));
+}
+void PrintArea(float Area)
+{
+	cout << "Circle Area = " << Area;
+}
+
+int main()
+{
+	float a, b;
+	ReadIsoscelesTriangleSides(a, b);
+	PrintArea(CalculateCircleAreabyIsoscelesTriangle(a,b));
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------
+~~Circle Area around Triangle~~
+void ReadTriangleSides(float& a,float& b,float& c)
+{
+
+	cout << "Enter a :";
+	cin >> a;
+	cout << "Enter b :";
+	cin >> b;
+	cout << "Enter c :";
+	cin >> c;
+}
+float CalculateCircleAreabyTriangle(float a,float b,float c)
+{
+	const float bi = 3.141592653589793238;
+	float P = (a + b + c) / 2;
+	return bi*pow((a*b*c/(4*sqrt(P*(P-a)*(P-b)*(P-c)))),2);
+}
+void PrintArea(float Area)
+{
+	cout << "Circle Area = " << Area;
+}
+
+int main()
+{
+	float a, b,c;
+	ReadTriangleSides(a, b,c);
+	PrintArea(CalculateCircleAreabyTriangle(a,b,c));
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------
+~~Validate age in range~~
+int ReadAge()
+{
+	int age;
+	cout << "Enter Age between 18 and 45 :";
+	cin >> age;
+	return age;
+}
+bool ValidateNumberInRange(int From, int age, int To)
+{
+	return (age>=From && age<=To);
+}
+int ReadUntilAgeBetween(int From, int To)
+{
+	int Age = 0;
+	do
+	{
+		Age=ReadAge();
+	} while (!ValidateNumberInRange(From, Age, To));
+	return Age;
+}
+void PrintResult(int age)
+{
+	if (ValidateNumberInRange(18, age, 45))
+		cout << age << " is a valid age " << endl;
+	else
+		cout << age << " is invalid age " << endl;
+}
+int main()
+{
+	PrintResult(ReadUntilAgeBetween(18,45));
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------
+~~Power of 2,3,4~~
+int ReadNumber()
+{
+	int number;
+	cout << "Enter number :";
+	cin >> number;
+	return number;
+}
+void PrintResult(int number)
+{
+	int a, b, c;
+	a = number * number;
+	b = number * number * number;
+	c=number* number * number * number;
+	cout << a << " " << b << " " << c << endl;
+}
+int main()
+{
+	PrintResult(ReadNumber());
+
+	return 0;
+}
+
+-------------------------------------------------------------------------------------------
+~~Power of M~~
+int ReadNumber()
+{
+	int number;
+	cout << "Enter number :";
+	cin >> number;
+	return number;
+}
+int ReadPower()
+{
+	int power;
+	cout << "Enter M :";
+	cin >> power;
+	return power;
+}
+int PowerOfM(int power,int number)
+{
+	if (power == 0)
+		return 1;
+	int P = 1;
+	for (int i = 1;i <= power;i++)
+	{
+		P = P * number;
+	}
+	return P;
+}
+void PrintResult(int Result)
+{
+	cout << "Result = " << Result << endl;
+}
+int main()
+{
+	PrintResult(PowerOfM(ReadPower(), ReadNumber()));
+
+	return 0;
+}
+----------------------------------------------------------------------------------
+~~Grade A,B,C,D,E,F~~
+int ReadNumberInRange(int From, int To)
+{
+	int grade;
+	do
+	{
+		cout << "Enter Grade between 0 and 100 : ";
+		cin >> grade;
+	} while (grade < From || grade> To);
+	return grade;
+}
+char GetGradeLetter(int grade)
+{
+	if (grade >= 90)
+		return 'A';
+	else if (grade >= 80)
+		return'B';
+	else if (grade >= 70)
+		return'C';
+	else if (grade >= 60)
+		return'D';
+	else if (grade >= 50)
+		return'E';
+	else
+		return 'F';
+}
+int main()
+{
+	cout << "Result = " << GetGradeLetter(ReadNumberInRange(0,100));
+
+	return 0;
+}
+---------------------------------------------------------------------------------
+~~Calculate Total Commision~~
+int ReadTotalSales()
+{
+	int Totalsales;
+	cout << "Enter Total Sales :";
+	cin >> Totalsales;
+	return Totalsales;
+}
+float CommisionPercentage(int Totalsales)
+{
+	if (Totalsales >= 1000000)
+		return 0.01;
+	else if (Totalsales >= 500000)
+		return 0.02;
+	else if (Totalsales >= 100000)
+		return 0.03;
+	else if (Totalsales >= 50000)
+		return 0.05;
+	else
+		return 0;
+}
+float CalculateCommision(int Totalsales)
+{
+	return Totalsales * CommisionPercentage(Totalsales);
+}
+int main()
+{
+	float totalsales=ReadTotalSales();
+	cout << "Commision Percentage = " << CommisionPercentage(totalsales) << endl;
+	cout << "Total Commision = " << CalculateCommision(totalsales);
+
+	return 0;
+}
+-------------------------------------------------------------------------------
+~~Calculate Total Pennies and Dollars~~
+struct stPiggyBankContent
+{
+	int pennies, nickels, dimes, quarters, dollars;
+};
+stPiggyBankContent ReadTotalContent()
+{
+	stPiggyBankContent TotalContent;
+	cout << "Enter Pennies :";
+	cin >> TotalContent.pennies;
+	cout << "Enter Nickels :";
+	cin >> TotalContent.nickels;
+	cout << "Enter Dimes :";
+	cin >> TotalContent.dimes;
+	cout << "Enter Quarters :";
+	cin >> TotalContent.quarters;
+	cout << "Enter Dollars :";
+	cin >> TotalContent.dollars;
+	return TotalContent;
+}
+int CalculateTotalPennies(stPiggyBankContent TotalPennies)
+{
+	return TotalPennies.pennies + TotalPennies.nickels * 5 + TotalPennies.dimes * 10 + TotalPennies.quarters * 25 + TotalPennies.dollars * 100;
+}
+int main()
+{
+	float TotalPennies = CalculateTotalPennies(ReadTotalContent());
+	cout << "\nTotal Pennies = " << TotalPennies << endl;
+	cout << "Total Dollars = " << TotalPennies / 100 << endl;
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------
+~~Simple Calculater~~
+enum enOperationType{ Add ='+',Subtract='-',Multiply='*',Divide='/' };
+int ReadNumber(string Message)
+{
+	int number;
+	cout << Message ;
+	cin >> number;
+	return number;
+}
+enOperationType ReadOpType()
+{
+	char OT;
+	cout << "Enter Operation Type ( + , - , * , / ) :";
+	cin >> OT;
+	return (enOperationType)OT;
+}
+float Calculate(float number1, float number2, enOperationType OT)
+{
+	switch (OT)
+	{
+	case enOperationType::Add:
+		return number1 + number2;
+	case enOperationType::Divide:
+		return number1 / number2;
+	case enOperationType::Multiply:
+		return number1 * number2;
+	case enOperationType::Subtract:
+		return number1 - number2;
+	default:
+		return number1 + number2;
+	}
+}
+int main()
+{ 
+	float number1, number2;
+	number1=ReadNumber("Enter Number 1 :");
+	number2=ReadNumber("Enter Number 2 :");
+	enOperationType OpType = ReadOpType();
+	cout << "Result = " << Calculate(number1, number2, OpType);
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------
+~~Sum Until -99~~
+float ReadNumber(string Message)
+{
+	int number;
+	cout << Message ;
+	cin >> number;
+	return number;
+}
+float SumNumbers()
+{
+	float sum = 0, counter = 1;
+	float number ;
+	do
+	{
+	    number = ReadNumber("Enter Number " + to_string(counter) + ": ") ;
+		if (number == -99)
+			break;
+		sum += number;
+		counter++;
+	} while (number != -99);
+	return sum;
+}
+
+int main()
+{ 
+	cout << "Result = " << SumNumbers() << endl;
+
+	return 0;
+}
+------------------------------------------------------------------------------------------
+~~Check the Number is Prime or not Prime~~
+enum enCheckPrime{Prime=1,NotPrime=2};
+float ReadPositiveNumber(string Message)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+enCheckPrime CheckPrimeNumber(int number)
+{
+	int M= number / 2;
+	for (int i = 2;i < M;i++)
+	{
+		if (number % i == 0)
+			return enCheckPrime::NotPrime;
+	}
+	return enCheckPrime::Prime;
+}
+void PrintResult(int number)
+{
+	switch (number)
+	{
+	case enCheckPrime::NotPrime:
+		cout << "The Number is not Prime \n";
+		break;
+	case enCheckPrime::Prime:
+		cout << "The Number is Prime \n";
+		break;
+	}
+}
+int main()
+{ 
+	PrintResult(CheckPrimeNumber(ReadPositiveNumber("Enter Positive Number : ")));
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------------
+~~Calculate Remainder~~
+float ReadPositiveNumber(string Message)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+float CalculateRemainder(float Totalbill, float Cashpaid)
+{
+	return Cashpaid - Totalbill;
+}
+int main()
+{ 
+	float Totalbill = ReadPositiveNumber("Enter TotalBill : ");
+	float CashPaid = ReadPositiveNumber("Enter CashPaid : ");
+	cout << "**************************************\n";
+	cout << "Remainder = " << CalculateRemainder(Totalbill, CashPaid);
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------------
+~~TotalBill after service and tax~~
+float ReadPositiveNumber(string Message)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+float CalculateTotalBill(float Totalbill)
+{
+	Totalbill = Totalbill * 1.1;
+	Totalbill = Totalbill * 1.16;
+	return Totalbill;
+}
+int main()
+{ 
+	float Totalbill=CalculateTotalBill(ReadPositiveNumber("Enter TotalBill : "));
+	cout << "TotalBill after service and tax : " << Totalbill << endl;
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------
+~~Hours to days and weeks~~
+float ReadPositiveNumber(string Message)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+float HoursToWeeks(float number)
+{
+	return number / (7 * 24);
+}
+float HoursToDays(float number)
+{
+	return number / 24;
+}
+int main()
+{ 
+	float days, weeks,hours;
+	hours = ReadPositiveNumber("Enter Total Hours : ");
+	days = HoursToDays(hours);
+	weeks = HoursToWeeks(hours);
+	cout << "Total days = " << days << endl;
+	cout << "Total weeks = " << weeks << endl;
+
+	return 0;
+}
+--------------------------------------------------------------------------------------
+~~Task duration in seconds~~
+struct stTaskDuration
+{
+	int seconds, minutes, hours, days;
+};
+float ReadPositiveNumber(string Message)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+stTaskDuration ReadTaskDuration()
+{
+	stTaskDuration taskduration;
+	taskduration.days = ReadPositiveNumber("Enter Total Days :");
+	taskduration.hours = ReadPositiveNumber("Enter Total Hours :");
+	taskduration.minutes = ReadPositiveNumber("Enter Total Minutes :");
+	taskduration.seconds = ReadPositiveNumber("Enter Total Seconds :");
+	return taskduration;
+}
+int TaskDurationInSeconds(stTaskDuration Taskduration)
+{
+	int totalseconds = 0;
+	totalseconds = Taskduration.days * 24 * 60 * 60;
+	totalseconds += Taskduration.hours * 60 * 60;
+	totalseconds += Taskduration.minutes * 60;
+	totalseconds += Taskduration.seconds;
+	return totalseconds;
+
+}
+int main()
+{ 
+	cout << "\nTask duration in seconds = " << TaskDurationInSeconds(ReadTaskDuration()) << endl;
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------
+~~Total Seconds to days : hours : minutes : seconds~~
+struct stTaskDuration
+{
+	int seconds, minutes, hours, days;
+};
+float ReadPositiveNumber(string Message)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+stTaskDuration SecondsToTaskDuration(int totalseconds)
+{
+	stTaskDuration Taskduraion;
+	const int secondperday= 24 * 60 * 60;
+	const int seconperhours=  60 * 60;
+	const int secondperminute=  60;
+	int remainder;
+	Taskduraion.days = totalseconds / secondperday;
+	remainder= totalseconds % secondperday;
+	Taskduraion.hours = remainder / seconperhours;
+	remainder= remainder % seconperhours;
+	Taskduraion.minutes = remainder / secondperminute;
+	remainder= remainder % secondperminute;
+	Taskduraion.seconds = remainder;
+
+	return Taskduraion;
+
+}
+void PrintTaskDuration(stTaskDuration taskduration)
+{
+	cout << "Task Duration : ";
+	cout << taskduration.days << " : " << taskduration.hours << " : " << taskduration.minutes << " : "
+		<< taskduration.seconds << endl;
+}
+int main()
+{ 
+	PrintTaskDuration(SecondsToTaskDuration(ReadPositiveNumber("Enter Total Seconds :")));
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------
+~~Day of Week using enum~~
+enum endayofweek{sun=1,mon=2,tue=3,wed=4,thr=5,fri=6,sat=7};
+int ReadDayInRange(string Message,int from,int to)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <from || number>to);
+
+	return number;
+}
+endayofweek ReadDayofWeek()
+{
+	int dayofweek;
+	dayofweek = ReadDayInRange("Enter day number from 1 to 7 :", 1, 7);
+	return (endayofweek)dayofweek;
+}
+string GetDayOfWeek(endayofweek day)
+{
+	switch (day)
+	{
+	case endayofweek::sun:
+		return "sunday";
+	case endayofweek::mon:
+		return "monday";
+	case endayofweek::tue:
+		return "tuesday";
+	case endayofweek::wed:
+		return "wednesday";
+	case endayofweek::thr:
+		return "thrusday";
+	case endayofweek::fri:
+		return "friday";
+	case endayofweek::sat:
+		return "satrday";
+	}
+}
+int main()
+{ 
+	cout<<GetDayOfWeek(ReadDayofWeek());
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------
+~~Print Month using enum~~
+enum enMonth{jan=1,feb=2,mar=3,apr=4,may=5,jun=6,jul=7,ags=8,spt=9,oct=10,nov=11,dec=12};
+int ReadMonthInRange(string Message,int from,int to)
+{
+	int number;
+	do
+	{
+		cout << Message;
+		cin >> number;
+	} while (number <from || number>to);
+
+	return number;
+}
+enMonth ReadMonth()
+{
+	int Month;
+	Month = ReadMonthInRange("Enter day number from 1 to 12 :", 1, 12);
+	return (enMonth)Month;
+}
+string GetMonth(enMonth month)
+{
+	switch (month)
+	{
+	case enMonth::jan:
+		return "janurary";
+	case enMonth::feb:
+		return "february";
+	case enMonth::mar:
+		return "march";
+	case enMonth::apr:
+		return "april";
+	case enMonth::may:
+		return "may";
+	case enMonth::jun:
+		return "june";
+	case enMonth::jul:
+		return "july";
+	case enMonth::ags:
+		return "agust";
+	case enMonth::spt:
+		return "september";
+	case enMonth::oct:
+		return "october";
+	case enMonth::nov:
+		return "november";
+	case enMonth::dec:
+		return "december";
+	}
+}
+int main()
+{ 
+	cout<<GetMonth(ReadMonth());
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------
+~~Print Capital Letters~~
+void PrintLetters()
+{
+	for (int i = 65; i <= 90; i++)
+	{
+		cout << char(i) << endl;
+	}
+}
+int main()
+{ 
+	PrintLetters();
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------
+~~Loan installment months~~
+void ReadNumbers(int& loanamount, int& monthlypayment)
+{
+	cout << "Enter Loan Amount :";
+	cin >> loanamount;
+	cout<< "Enter Monthly Payment :";
+	cin >> monthlypayment;
+}
+int numberofmonths(int loanamount,int monthlypayment)
+{
+	return loanamount / monthlypayment;
+}
+int main()
+{ 
+	int loanamount, monthlypayment;
+	ReadNumbers(loanamount, monthlypayment);
+	cout << "number of months = " << numberofmonths(loanamount, monthlypayment)<<endl;
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------
+~~PIN Code~~
+string ReadPinCode()
+{
+	string pin;
+	cout << "Enter Pin Code :";
+	cin >> pin;
+	return pin;
+
+}
+bool Login()
+{
+	string pincode ;
+	do
+	{
+		pincode = ReadPinCode();
+		if (pincode == "1234")
+			return 1;
+		else
+		{
+			cout << "\nwrong PIN !\n";
+			system("color 4F");
+		}
+	} while (pincode != "1234");
+}
+int main()
+{ 
+	if (Login())
+	{
+		cout << "Your Balance = " << 7500;
+		system("color 2F");
+	};
+
+	return 0;
+}
+---------------------------------------------------------------------------------------
+~~PIN Code~~
+string ReadPinCode()
+{
+	string pin;
+	cout << "Enter Pin Code :";
+	cin >> pin;
+	return pin;
+
+}
+bool Login()
+{
+	string pincode ;
+	int counter = 3;
+	do
+	{
+		counter--;
+		pincode = ReadPinCode();
+		if (pincode == "1234")
+			return 1;
+		else
+		{
+			cout << "\nwrong PIN ! you have "<<counter<<" more tries.\n";
+			system("color 4F");
+		}
+	} while (counter>=1&&pincode != "1234");
+	return 0;
+}
+int main()
+{ 
+	if (Login())
+	{
+		cout << "Your Balance = " << 7500;
+		system("color 2F");
+	}
+	else
+	{
+		cout << "\nYour card locked! call the bank for help \n";
+	}
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------
+~~Multiplication Table from 1 to 10~~
+void HeadofTable()
+{
+	cout << "\n\t\t\tMultiplication Table from 1 to 10 \n\n";
+	for (int i = 1;i <= 10;i++)
+	{
+		cout << "\t    " << i << "  ";
+	}
+	cout << "\n--------------------------------------------------------------------------------------\n";
+}
+void PrintMultiplyTable()
+{
+	for (int a = 1;a <= 10;a++)
+	{
+		cout << "  " << a << "\t|   ";
+		for (int m = 1;m <= 10;m++)
+		{
+			cout << m * a<<"\t    ";
+		}
+		cout << "\n";
+	}
+	
+}
+int main()
+{ 
+	HeadofTable();
+	PrintMultiplyTable();
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+~~Check perfect number~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+int CheckPerfectNumber(int number)
+{
+	int sum = 0;
+	for (int i = 1;i < number;i++)
+	{
+		if (number % i == 0)
+		
+			sum += i;
+		
+	}
+	return sum;
+}
+void PrintResult(int number)
+{
+	if (CheckPerfectNumber(number)==number)
+	{
+		cout << "\nPerfect Number";
+	}
+	else
+	{
+		cout << "\nNot perfect";
+	}
+}
+int main()
+{
+	int number = ReadNumber("Enter positive number :");
+	PrintResult(number);
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------
+~~Print perfect numbers from 1 to N~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+bool CheckPerfectNumber(int number)
+{
+	int sum = 0;
+	for (int i = 1;i < number;i++)
+	{
+		if (number % i == 0)
+		
+			sum += i;
+		
+	}
+	return sum==number;
+}
+void PrintResult(int number)
+{
+	for (int i = 1;i <= number;i++)
+	{
+		if (CheckPerfectNumber(i))
+			cout << i << endl;
+	}
+}
+int main()
+{
+	int number = ReadNumber("Enter positive number :");
+	PrintResult(number);
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------
+~~Print digits in reversed order~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+void PrintResult(int number)
+{
+	int remainder = 0;
+		while (number > 0)
+		{
+			remainder = number % 10;
+			number = number / 10;
+			cout << remainder<<endl;
+		}
+}
+int main()
+{
+
+
+	PrintResult(ReadNumber("enter number :"));
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------
+~~sum of digits of number~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+int PrintResult(int number)
+{
+	int remainder = 0,sum=0;
+		while (number > 0)
+		{
+			remainder = number % 10;
+			number = number / 10;
+			sum += remainder;
+		}
+		return sum;
+}
+int main()
+{
+	cout << "\nsum of digits :" << PrintResult(ReadNumber("enter positive number :"));
+
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------
+~~ Reversed Number ~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+
+int ReverseNumber(int number)
+{
+	int remainder = 0;
+	int reverse=0;
+	while (number > 0)
+	{
+		remainder = number % 10;
+		number = number / 10;
+		reverse =reverse*10+ remainder;
+	}
+	return reverse;
+}
+int main()
+{
+
+
+	cout<<"\nReverse is : "<<ReverseNumber(ReadNumber("enter positive number :"))<<endl;
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------------------
+~~Check Freaquancy of Digit of Number~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+int CheckDigitFrequancy(int number,int digit)
+{
+	int remainder = 0;
+	int frequancy=0;
+	while (number > 0)
+	{
+		remainder = number % 10;
+		number = number / 10;
+		if (remainder == digit)
+			frequancy++;
+
+	}
+	return frequancy;
+}
+int main()
+{
+	int number = ReadNumber("enter positive number : ");
+	int digit = ReadNumber("Enter Digit :");
+	cout<<"\nFrequance of "<<digit<<" = "<< CheckDigitFrequancy(number,digit)<<endl;
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------
+~~Freaquancy of all Digits of Number~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+int CountDigitFrequancy(int number,int digit)
+{
+	int remainder = 0;
+	int frequancy=0;
+	while (number > 0)
+	{
+		remainder = number % 10;
+		number = number / 10;
+		if (remainder == digit)
+			frequancy++;
+
+	}
+	return frequancy;
+}
+void PrintResult(int number)
+{
+	for (int i = 0;i < 10;i++)
+	{
+		int freq = 0;
+		freq=CountDigitFrequancy(number, i);
+		if (freq > 0)
+		{
+			cout << "Frequancy of " << i << " = " << freq<<endl;
+		}
+	}
+	
+}
+int main()
+{
+	PrintResult(ReadNumber("Enter Positive Number :"));
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------
+~~Print Number in Order From Left To Right~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+int ReverseNumber(int number)
+{
+	int remainder = 0;
+	int reverse = 0;
+	while (number > 0)
+	{
+		remainder = number % 10;
+		number = number / 10;
+		reverse = reverse * 10 + remainder;
+	}
+	return reverse;
+}
+void PrintNumberInOrder(int number)
+{
+	int remainder = 0;
+	while (number > 0)
+	{
+		remainder = number % 10;
+		number = number / 10;
+		cout << remainder << endl;
+	}
+}
+int main()
+{
+	PrintNumberInOrder(ReverseNumber(ReadNumber("Enter Positive Number :")));
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------
+~~Is Number Palindrome?~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+int ReverseNumber(int number)
+{
+	int remainder = 0;
+	int reverse = 0;
+	while (number > 0)
+	{
+		remainder = number % 10;
+		number = number / 10;
+		reverse = reverse * 10 + remainder;
+	}
+	return reverse;
+}
+void IsNumberPalindrome(int number,int reverse)
+{
+	if (number == reverse)
+		cout << "The Number is Palindrome " << endl;
+	else
+		cout << "The Number is not Palindrome " << endl;
+	
+}
+int main()
+{
+	int number = ReadNumber("Enter Positive Number : ");
+	int reverse = ReverseNumber(number);
+	IsNumberPalindrome(number,reverse);
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------
+~~Print Inverted Pattern~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+void InvertedPattern(int number)
+{
+	for (int i = number;i > 0;i--)
+	{
+		cout << "\n";
+		for (int j = 1;j <= i;j++)
+		{
+			cout << i;
+		}
+
+	}
+}
+int main()
+{
+	InvertedPattern(ReadNumber("Enter Positive Number : "));
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------
+~~Print Inverted Letter Pattern~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+void InvertedPattern(int number)
+{
+
+	for (int i = 65 + number;i >= 65;i--)
+	{
+		cout << "\n";
+		for (int j = i;j >=65 ;j--)
+		{
+			cout << char(i);
+		}
+
+	}
+}
+int main()
+{
+	InvertedPattern(ReadNumber("Enter Positive Number : "));
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------
+~~Print Letter Pattern~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+void LetterPattern(int number)
+{
+
+	for (int i = 65;i <= 64+number;i++)
+	{
+		cout << "\n";
+		for (int j = i;j >=65 ;j--)
+		{
+			cout << char(i);
+		}
+
+	}
+}
+int main()
+{
+	LetterPattern(ReadNumber("Enter Positive Number : "));
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------
+~~Print from AAA to ZZZ~~
+void AAATOZZZ()
+{
+
+	for (int i = 65;i <= 90;i++)
+	{
+		cout << "\n";
+		for (int j = 65;j <=90 ;j++)
+		{
+			for (int k = 65;k <= 90;k++)
+			{
+				cout << char(i) << char(j) << char(k) << endl;
+			}
+		}
+
+	}
+}
+int main()
+{
+	AAATOZZZ();
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------
+~~Guess a 3-Letter Password (Capital)~~
+string ReadPassword(string message)
+{
+	string password;
+	cout << message;
+	cin >> password;
+	return password;
+}
+bool AAATOZZZ(string password)
+{
+	string word="";
+	int counter = 0;
+	for (int i = 65;i <= 90;i++)
+	{
+		cout << "\n";
+		for (int j = 65;j <=90 ;j++)
+		{
+			for (int k = 65;k <= 90;k++)
+			{
+				counter++;
+				word = word + char(i);
+				word = word + char(j);
+				word = word + char(k);
+				if (word == password)
+				{
+					cout << "Password is " << word << " found after " << counter << " trial(s)\n";
+					return true;
+				}
+				word = "";
+			}
+		}
+
+	}
+}
+int main()
+{
+	AAATOZZZ(ReadPassword("enter Password : "));
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------
+~~Encryption & Decreption of Text~~
+string ReadText(string message)
+{
+	string text;
+	cout << message;
+	cin >> text;
+	return text;
+}
+string Encryption(string text, int EncryptKey)
+{
+	for (int i = 0;i <= text.length();i++)
+	{
+		text[i] = char(text[i] + EncryptKey);;
+	}
+	return text;
+}
+string Decryption(string text, int EncryptKey)
+{
+	for (int i = 0;i <=text.length();i++)
+	{
+		text[i] = char(text[i] - EncryptKey);;
+	}
+	return text;
+}
+int main()
+{
+	const int EncryptKey = 2;
+	
+	string text = ReadText("Enter Text : ");
+	cout << "\nText Before Encryption : " << text << endl;
+	cout << "Text After Encryption : " << Encryption(text, EncryptKey) << endl;
+	cout << "Text After Decryption : " << Decryption(Encryption(text, EncryptKey), EncryptKey) << endl;
+
+	return 0;
+}
+------------------------------------------------------------------------------------------------------------
+~~Random Numbers in Range~~
+int RandomNumber(int From, int To)
+{
+	int random=rand() % (To - From + 1) + From;
+	return random;
+}
+int main()
+{
+	srand((unsigned)time(NULL));
+	cout << RandomNumber(10, 20) << endl;
+	cout << RandomNumber(1, 5);
+
+	return 0;
+}
+--------------------------------------------------------------------------------------------------------------
+~~Print Random Characters~~
+enum enRandomCharacter{SmallCharacter=1,CapitalCharacter=2,SpecialLetter=3,Digit=4};
+char RandomNumber(int From, int To)
+{
+	int random=rand() % (To - From + 1) + From;
+	return random;
+}
+char GetRandomCharacter(enRandomCharacter RandomCharacter)
+{
+	switch (RandomCharacter)
+	{
+	case enRandomCharacter::SmallCharacter:
+		return char(RandomNumber(96, 121));
+	case enRandomCharacter::CapitalCharacter:
+		return char(RandomNumber(65, 90));
+	case enRandomCharacter::SpecialLetter:
+		return char(RandomNumber(33, 47));
+	case enRandomCharacter::Digit:
+		return char(RandomNumber(48, 57));
+	}
+}
+int main()
+{
+	srand((unsigned)time(NULL));
+	cout << GetRandomCharacter(enRandomCharacter::SmallCharacter) << endl;
+	cout << GetRandomCharacter(enRandomCharacter::CapitalCharacter) << endl;
+	cout << GetRandomCharacter(enRandomCharacter::SpecialLetter) << endl;
+	cout << GetRandomCharacter(enRandomCharacter::Digit) << endl;
+
+	return 0;
+}
+-----------------------------------------------------------------------------------------------------
+~~Generate Number of keys~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+enum enRandomCharacter { SmallCharacter = 1, CapitalCharacter = 2, SpecialLetter = 3, Digit = 4 };
+char RandomNumber(int From, int To)
+{
+	int random = rand() % (To - From + 1) + From;
+	return random;
+}
+char GetRandomCharacter(enRandomCharacter RandomCharacter)
+{
+	switch (RandomCharacter)
+	{
+	case enRandomCharacter::SmallCharacter:
+		return char(RandomNumber(96, 121));
+	case enRandomCharacter::CapitalCharacter:
+		return char(RandomNumber(65, 90));
+	case enRandomCharacter::SpecialLetter:
+		return char(RandomNumber(33, 47));
+	case enRandomCharacter::Digit:
+		return char(RandomNumber(48, 57));
+	}
+}
+string GenerateWord(enRandomCharacter charactertype,int length)
+{
+	string word = "";
+	for (int i = 1;i <= length;i++)
+	{
+		word = word+GetRandomCharacter(charactertype);
+	}
+	return word;
+}
+string GenerateKey()
+{
+	string key="";
+	key = GenerateWord(enRandomCharacter::CapitalCharacter, 4) + "-" +
+		  GenerateWord(enRandomCharacter::CapitalCharacter, 4) + "-" +
+		  GenerateWord(enRandomCharacter::CapitalCharacter, 4) + "-" +
+		  GenerateWord(enRandomCharacter::CapitalCharacter, 4);
+	return key;
+}
+void NumberOfKeys(int number)
+{
+	for (int i = 1;i <= number;i++)
+	{
+		cout << "Key [" << i << "] = " << GenerateKey() << endl;
+	}
+}
+int main()
+{
+	srand((unsigned)time(NULL));
+	NumberOfKeys(ReadNumber("Enter number of keys : "));
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------------
+~~Repeated Elements Count In Array~~
+int ReadNumber(string message)
+{
+	int number;
+	do
+	{
+		cout << message;
+		cin >> number;
+	} while (number <= 0);
+
+	return number;
+}
+void ReadArray(int arr[100],int &arrlength)
+{
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		cout << "Element [" << i + 1 << "] = ";
+		cin >> arr[i];
+	}
+	cout << "\n";
+}
+void PrintArray(int arr[100],int arrlength)
+{
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+int RepeatedTimes(int arr[100], int arrlength, int digit)
+{
+	int counter = 0;
+	for (int i = 0;i <= arrlength - 1; i++)
+	{
+		if (arr[i] == digit)
+			counter++;
+	}
+	return counter;
+}
+int main()
+{
+	int arr[100], arrlength, digit;
+	cout << "Enter number of elements :";
+	cin >> arrlength;
+	cout << "\nEnter Elements :\n";
+	ReadArray(arr, arrlength);
+	cout << "Original Array :\n";
+	PrintArray(arr, arrlength);
+	int number = ReadNumber("Enter Digit to Check Frequancy :");
+	cout << "\nNumber :" << number<<" is repeated "<<
+	RepeatedTimes(arr, arrlength,number)<<" times";
+
+
+	return 0;
+}
+---------------------------------------------------------------------------------------------------------
+~~Fill Array With Random Numbers From 1 to 100~~
+char RandomNumber(int From, int To)
+{
+	int random = rand() % (To - From + 1) + From;
+	return random;
+}
+void FillArrayWithRandomNumbers(int arr[100],int &arrlength)
+{
+	cout << "Enter Number of Elements To Fill :";
+	cin >> arrlength;
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		arr[i]=RandomNumber(1,100);
+	}
+	cout << "\n";
+}
+void PrintArray(int arr[100],int arrlength)
+{
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+
+int main()
+{
+	int arr[100], arrlength;
+	srand((unsigned)time(NULL));
+
+	FillArrayWithRandomNumbers(arr, arrlength);
+	cout << "\nArray Elements = ";
+	PrintArray(arr, arrlength);
+
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------
+~~Fill Array With Random Numbers From 1 to 100 and Print Max Number In Array ~~
+char RandomNumber(int From, int To)
+{
+	int random = rand() % (To - From + 1) + From;
+	return random;
+}
+void FillArrayWithRandomNumbers(int arr[100],int &arrlength)
+{
+	cout << "Enter Number of Elements To Fill :";
+	cin >> arrlength;
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		arr[i]=RandomNumber(1,100);
+	}
+	cout << "\n";
+}
+void PrintArray(int arr[100],int arrlength)
+{
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+int MaxNumberInArray(int arr[100], int arrlength)
+{
+	cout << "\nMax Number = ";
+	int MaxNumber = 0;
+	for (int i = 0;i < arrlength;i++)
+	{
+		
+		if (arr[i] > MaxNumber)
+		{
+			MaxNumber = arr[i];
+		}
+		
+	}
+	return MaxNumber;
+}
+int main()
+{
+	int arr[100], arrlength;
+	srand((unsigned)time(NULL));
+
+	FillArrayWithRandomNumbers(arr, arrlength);
+	cout << "\nArray Elements = ";
+	PrintArray(arr, arrlength);
+	cout<<MaxNumberInArray(arr, arrlength);
+
+
+	return 0;
+}
+-------------------------------------------------------------------------------------------------------
+~~Fill Array With Random Numbers From 1 to 100 and Print Minimum Number In Array~~
+char RandomNumber(int From, int To)
+{
+	int random = rand() % (To - From + 1) + From;
+	return random;
+}
+void FillArrayWithRandomNumbers(int arr[100],int &arrlength)
+{
+	cout << "Enter Number of Elements To Fill :";
+	cin >> arrlength;
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		arr[i]=RandomNumber(1,100);
+	}
+	cout << "\n";
+}
+void PrintArray(int arr[100],int arrlength)
+{
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+int MinNumberInArray(int arr[100], int arrlength)
+{
+	cout << "\nMinimum Number = ";
+	int MinNumber = arr[0];
+	for (int i = 0;i < arrlength;i++)
+	{
+		
+		if (arr[i] < MinNumber)
+		{
+			MinNumber = arr[i];
+		}
+		
+	}
+	return MinNumber;
+}
+int main()
+{
+	int arr[100], arrlength;
+	srand((unsigned)time(NULL));
+
+	FillArrayWithRandomNumbers(arr, arrlength);
+	cout << "\nArray Elements = ";
+	PrintArray(arr, arrlength);
+	cout<<MinNumberInArray(arr, arrlength);
+
+
+	return 0;
+}
+----------------------------------------------------------------------------------------------------
+~~Fill Array With Random Numbers From 1 to 100 and Print Sum of Elements In Array~~
+char RandomNumber(int From, int To)
+{
+	int random = rand() % (To - From + 1) + From;
+	return random;
+}
+void FillArrayWithRandomNumbers(int arr[100],int &arrlength)
+{
+	cout << "Enter Number of Elements To Fill :";
+	cin >> arrlength;
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		arr[i]=RandomNumber(1,100);
+	}
+	cout << "\n";
+}
+void PrintArray(int arr[100],int arrlength)
+{
+	for (int i = 0;i <= arrlength - 1;i++)
+	{
+		cout << arr[i] << " ";
+	}
+	cout << "\n";
+}
+int SumOfArrayElements(int arr[100], int arrlength)
+{
+	cout << "\nSum of Elements = ";
+	int Sum = 0;
+	for (int i = 0;i < arrlength;i++)
+	{
+		Sum += arr[i];
+	}
+	return Sum;
+}
+int main()
+{
+	int arr[100], arrlength;
+	srand((unsigned)time(NULL));
+
+	FillArrayWithRandomNumbers(arr, arrlength);
+	cout << "\nArray Elements = ";
+	PrintArray(arr, arrlength);
+	cout<< SumOfArrayElements(arr, arrlength)<<"\n";
+
+
+	return 0;
+}
 
         
 
 
 
     
+
 
 
 
