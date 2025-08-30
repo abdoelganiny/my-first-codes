@@ -2269,15 +2269,15 @@ int main()
 }
 ----------------------------------------------------------------------------------
 ~~Grade A,B,C,D,E,F~~
-int ReadNumberInRange(int From, int To)
+int ReadNumberInRange(string Message,int From, int To)
 {
-	int grade;
+	int number;
 	do
 	{
-		cout << "Enter Grade between 0 and 100 : ";
-		cin >> grade;
-	} while (grade < From || grade> To);
-	return grade;
+		cout << Message;
+		cin >> number;
+	} while (number < From || number> To);
+	return number;
 }
 char GetGradeLetter(int grade)
 {
@@ -3030,7 +3030,7 @@ int ReadNumber(string message)
 	return number;
 }
 
-int PrintResult(int number)
+int SumDigitOfNumber(int number)
 {
 	int remainder = 0,sum=0;
 		while (number > 0)
@@ -3144,7 +3144,7 @@ int CountDigitFrequancy(int number,int digit)
 	}
 	return frequancy;
 }
-void PrintResult(int number)
+void PrintFrequancyOfDigit(int number)
 {
 	for (int i = 0;i < 10;i++)
 	{
@@ -3583,7 +3583,7 @@ void PrintArray(int arr[100],int arrlength)
 	}
 	cout << "\n";
 }
-int RepeatedTimes(int arr[100], int arrlength, int digit)
+int RepeatedTimesInArray(int arr[100], int arrlength, int digit)
 {
 	int counter = 0;
 	for (int i = 0;i <= arrlength - 1; i++)
@@ -3807,6 +3807,7 @@ int main()
 
 
     
+
 
 
 
